@@ -1,0 +1,2 @@
+json.extract! cardholder_personal_info, :id, :name, :lastname, :email, :phone_num, :home_num, :street, :city, :state, :zip, :cardholder_id, :created_at, :updated_at
+json.url cardholder_personal_info_url(cardholder_personal_info, format: :json)

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date of fine:</strong>
+  <%= @fine.date_of_fine %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @fine.amount %>
+</p>
+
+<p>
+  <strong>Cardholder:</strong>
+  <%= @fine.cardholder_id %>
+</p>
+
+<p>
+  <strong>Fine:</strong>
+  <%= @fine.fine_id %>
+</p>
+
+<%= link_to 'Edit', edit_fine_path(@fine) %> |
+<%= link_to 'Back', fines_path %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fines</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date of fine</th>
+      <th>Amount</th>
+      <th>Cardholder</th>
+      <th>Fine</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fines.each do |fine| %>
+      <tr>
+        <td><%= fine.date_of_fine %></td>
+        <td><%= fine.amount %></td>
+        <td><%= fine.cardholder_id %></td>
+        <td><%= fine.fine_id %></td>
+        <td><%= link_to 'Show', fine %></td>
+        <td><%= link_to 'Edit', edit_fine_path(fine) %></td>
+        <td><%= link_to 'Destroy', fine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fine', new_fine_path %>

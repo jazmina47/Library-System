@@ -1,0 +1,1 @@
+json.array! @cardholder_personal_infos, partial: 'cardholder_personal_infos/cardholder_personal_info', as: :cardholder_personal_info

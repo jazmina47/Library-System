@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cardholder_personal_info.name %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @cardholder_personal_info.lastname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @cardholder_personal_info.email %>
+</p>
+
+<p>
+  <strong>Phone num:</strong>
+  <%= @cardholder_personal_info.phone_num %>
+</p>
+
+<p>
+  <strong>Home num:</strong>
+  <%= @cardholder_personal_info.home_num %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @cardholder_personal_info.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @cardholder_personal_info.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @cardholder_personal_info.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @cardholder_personal_info.zip %>
+</p>
+
+<p>
+  <strong>Cardholder:</strong>
+  <%= @cardholder_personal_info.cardholder_id %>
+</p>
+
+<%= link_to 'Edit', edit_cardholder_personal_info_path(@cardholder_personal_info) %> |
+<%= link_to 'Back', cardholder_personal_infos_path %>

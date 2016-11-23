@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cardholder Accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Fines</th>
+      <th>Cardholder</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cardholder_accounts.each do |cardholder_account| %>
+      <tr>
+        <td><%= cardholder_account.firstname %></td>
+        <td><%= cardholder_account.lastname %></td>
+        <td><%= cardholder_account.fines %></td>
+        <td><%= cardholder_account.cardholder_id %></td>
+        <td><%= link_to 'Show', cardholder_account %></td>
+        <td><%= link_to 'Edit', edit_cardholder_account_path(cardholder_account) %></td>
+        <td><%= link_to 'Destroy', cardholder_account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cardholder Account', new_cardholder_account_path %>

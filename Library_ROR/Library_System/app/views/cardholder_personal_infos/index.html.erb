@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cardholder Personal Infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th>Phone num</th>
+      <th>Home num</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Cardholder</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cardholder_personal_infos.each do |cardholder_personal_info| %>
+      <tr>
+        <td><%= cardholder_personal_info.name %></td>
+        <td><%= cardholder_personal_info.lastname %></td>
+        <td><%= cardholder_personal_info.email %></td>
+        <td><%= cardholder_personal_info.phone_num %></td>
+        <td><%= cardholder_personal_info.home_num %></td>
+        <td><%= cardholder_personal_info.street %></td>
+        <td><%= cardholder_personal_info.city %></td>
+        <td><%= cardholder_personal_info.state %></td>
+        <td><%= cardholder_personal_info.zip %></td>
+        <td><%= cardholder_personal_info.cardholder_id %></td>
+        <td><%= link_to 'Show', cardholder_personal_info %></td>
+        <td><%= link_to 'Edit', edit_cardholder_personal_info_path(cardholder_personal_info) %></td>
+        <td><%= link_to 'Destroy', cardholder_personal_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cardholder Personal Info', new_cardholder_personal_info_path %>

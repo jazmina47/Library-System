@@ -1,0 +1,2 @@
+class CardholderPersonalInfo < ApplicationRecord
+end

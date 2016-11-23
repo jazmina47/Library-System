@@ -1,0 +1,37 @@
+<%= form_for(material) do |f| %>
+  <% if material.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(material.errors.count, "error") %> prohibited this material from being saved:</h2>
+
+      <ul>
+      <% material.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :material_type %>
+    <%= f.text_field :material_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :material_classification_id %>
+    <%= f.text_field :material_classification_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :material_title %>
+    <%= f.text_field :material_title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :quantity_material %>
+    <%= f.number_field :quantity_material %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

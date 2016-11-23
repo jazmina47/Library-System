@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @checkout.date %>
+</p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= @checkout.due_date %>
+</p>
+
+<p>
+  <strong>Checkout:</strong>
+  <%= @checkout.checkout_id %>
+</p>
+
+<p>
+  <strong>Cardholder:</strong>
+  <%= @checkout.cardholder_id %>
+</p>
+
+<p>
+  <strong>Staff member:</strong>
+  <%= @checkout.staff_member_id %>
+</p>
+
+<%= link_to 'Edit', edit_checkout_path(@checkout) %> |
+<%= link_to 'Back', checkouts_path %>

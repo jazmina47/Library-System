@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  material_type: MyString
+  material_classification_id: MyString
+  material_title: MyString
+  quantity_material: 1
+
+two:
+  material_type: MyString
+  material_classification_id: MyString
+  material_title: MyString
+  quantity_material: 1

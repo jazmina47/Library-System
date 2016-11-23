@@ -1,0 +1,1 @@
+json.partial! "cardholder_accounts/cardholder_account", cardholder_account: @cardholder_account

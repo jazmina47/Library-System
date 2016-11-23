@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-11-23 10:51:22
+  due_date: 2016-11-23
+  checkout_id: 1
+  cardholder_id: 1
+  staff_member_id: 1
+
+two:
+  date: 2016-11-23 10:51:22
+  due_date: 2016-11-23
+  checkout_id: 1
+  cardholder_id: 1
+  staff_member_id: 1

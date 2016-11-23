@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @cardholder_account.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @cardholder_account.lastname %>
+</p>
+
+<p>
+  <strong>Fines:</strong>
+  <%= @cardholder_account.fines %>
+</p>
+
+<p>
+  <strong>Cardholder:</strong>
+  <%= @cardholder_account.cardholder_id %>
+</p>
+
+<%= link_to 'Edit', edit_cardholder_account_path(@cardholder_account) %> |
+<%= link_to 'Back', cardholder_accounts_path %>

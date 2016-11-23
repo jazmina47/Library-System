@@ -1,0 +1,37 @@
+<%= form_for(cardholder_account) do |f| %>
+  <% if cardholder_account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cardholder_account.errors.count, "error") %> prohibited this cardholder_account from being saved:</h2>
+
+      <ul>
+      <% cardholder_account.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fines %>
+    <%= f.text_field :fines %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cardholder_id %>
+    <%= f.number_field :cardholder_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
