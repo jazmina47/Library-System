@@ -69,6 +69,6 @@ class CardholderAccountsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cardholder_account_params
-      params.require(:cardholder_account).permit(:firstname, :lastname, :fines, :cardholder_id)
+      params.require(:cardholder_account).permit(:firstname, :lastname, :cardholder_id)
     end
 end

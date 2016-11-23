@@ -17,7 +17,7 @@ class CardholderAccountsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create cardholder_account" do
     assert_difference('CardholderAccount.count') do
-      post cardholder_accounts_url, params: { cardholder_account: { cardholder_id: @cardholder_account.cardholder_id, fines: @cardholder_account.fines, firstname: @cardholder_account.firstname, lastname: @cardholder_account.lastname } }
+      post cardholder_accounts_url, params: { cardholder_account: { cardholder_id: @cardholder_account.cardholder_id, firstname: @cardholder_account.firstname, lastname: @cardholder_account.lastname } }
     end
 
     assert_redirected_to cardholder_account_url(CardholderAccount.last)
@@ -34,7 +34,7 @@ class CardholderAccountsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update cardholder_account" do
-    patch cardholder_account_url(@cardholder_account), params: { cardholder_account: { cardholder_id: @cardholder_account.cardholder_id, fines: @cardholder_account.fines, firstname: @cardholder_account.firstname, lastname: @cardholder_account.lastname } }
+    patch cardholder_account_url(@cardholder_account), params: { cardholder_account: { cardholder_id: @cardholder_account.cardholder_id, firstname: @cardholder_account.firstname, lastname: @cardholder_account.lastname } }
     assert_redirected_to cardholder_account_url(@cardholder_account)
   end
 

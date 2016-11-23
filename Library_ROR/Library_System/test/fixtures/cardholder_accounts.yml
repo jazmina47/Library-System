@@ -3,11 +3,9 @@
 one:
   firstname: MyString
   lastname: MyString
-  fines: 9.99
   cardholder_id: 1
 
 two:
   firstname: MyString
   lastname: MyString
-  fines: 9.99
   cardholder_id: 1

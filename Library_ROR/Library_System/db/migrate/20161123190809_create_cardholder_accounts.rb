@@ -3,7 +3,6 @@ class CreateCardholderAccounts < ActiveRecord::Migration[5.0]
     create_table :cardholder_accounts do |t|
       t.string :firstname
       t.string :lastname
-      t.decimal :fines
       t.integer :cardholder_id
 
       t.timestamps

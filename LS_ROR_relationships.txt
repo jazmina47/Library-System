@@ -10,7 +10,7 @@
 ---------------------------
 Table: Library_Staff
 ---------------------------
-
+*
 class Library_Staff < ApplicationRecord
 
 	has_many :checkouts
@@ -23,32 +23,26 @@ Table: Checkouts
 
 class Checkouts < ApplicationRecord
 
-	belongs_to  :library_staff
+	has_and_belongs_to_many :materials	
 
-	belongs_to  :cardholder_account
 
-	has_many    :checkouts_to_materials
 end
 
 -------------------------------
 Table: Checkouts_to_Materials
 -------------------------------
-
+*
 class Checkouts_to_Materials < ApplicationRecord
-
-	belongs_to  :checkouts
-
-	belongs_to  :library_materials
 
 end
 
 ---------------------------
-Table: Library_Materials
+Table: Materials
 ---------------------------
 
-class Library_Materials < ApplicationRecord
+class Materials < ApplicationRecord
 
-	has_many    :checkouts_to_materials
+	has_and_belongs_to_many :checkouts
 
 end
 
@@ -58,7 +52,7 @@ Table: Cardholder_Account
 
 class Cardholder_Account < ApplicationRecord
 
-	belongs_to  :cardholder_personal_info
+	has_one	    :Cardhorder_Personal_Info	
 
 	has_many    :checkouts
 
@@ -73,6 +67,7 @@ Table: Cardholder_Personal_Info
 class Cardholder_Personal_Info < ApplicationRecord
 	
 	belongs_to  :cardholder_account
+	
 end
 
 
