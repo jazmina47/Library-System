@@ -1,0 +1,97 @@
+/* 
+ * For library system ROR app
+ * 11/21/16
+ * Relationships between tables 
+ * Should be added to their corresponding ruby table files (names for tables may differ)
+ * might be (app/models/table_name.rb)
+ * or might be (app/models/application_record.rb)
+ */
+
+---------------------------
+Table: Library_Staff
+---------------------------
+
+class Library_Staff < ApplicationRecord
+
+	has_many :checkouts
+
+end
+
+---------------------------
+Table: Checkouts
+---------------------------
+
+class Checkouts < ApplicationRecord
+
+	belongs_to  :library_staff
+
+	belongs_to  :cardholder_account
+
+	has_many    :checkouts_to_materials
+end
+
+-------------------------------
+Table: Checkouts_to_Materials
+-------------------------------
+
+class Checkouts_to_Materials < ApplicationRecord
+
+	belongs_to  :checkouts
+
+	belongs_to  :library_materials
+
+end
+
+---------------------------
+Table: Library_Materials
+---------------------------
+
+class Library_Materials < ApplicationRecord
+
+	has_many    :checkouts_to_materials
+
+end
+
+---------------------------
+Table: Cardholder_Account
+---------------------------
+
+class Cardholder_Account < ApplicationRecord
+
+	belongs_to  :cardholder_personal_info
+
+	has_many    :checkouts
+
+	has_many    :fines
+
+end
+
+---------------------------------
+Table: Cardholder_Personal_Info
+---------------------------------
+
+class Cardholder_Personal_Info < ApplicationRecord
+	
+	belongs_to  :cardholder_account
+end
+
+
+--------------------------------
+Table: Fines
+--------------------------------
+
+class Fines < ApplicationRecord
+	
+	belongs_to  :cardholder_account
+
+end
+
+
+
+
+
+
+
+
+
+
