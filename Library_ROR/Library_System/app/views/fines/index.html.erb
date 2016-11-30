@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Fines</h1>
+<h1 align="center">Fines</h1>
 
-<table>
+
+<div class="container">
+<table class="table">
   <thead>
     <tr>
       <th>Date of fine</th>
@@ -27,7 +29,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
 
 <%= link_to 'New Fine', new_fine_path %>

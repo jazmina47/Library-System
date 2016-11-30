@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :cardholder_accounts
   get 'pages/home'
+  root 'pages#home'
 
   resources :cardholder_personal_infos
   resources :materials

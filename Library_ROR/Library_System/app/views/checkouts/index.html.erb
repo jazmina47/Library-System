@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Checkouts</h1>
+<h1 align="center">Checkouts</h1>
 
-<table>
+<div class="container">
+
+<table class="table">
   <thead>
     <tr>
       <th>Date</th>
@@ -29,7 +31,8 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
+
 
 <%= link_to 'New Checkout', new_checkout_path %>
