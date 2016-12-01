@@ -46,6 +46,11 @@
 
 
   <body>
+      <%= button_to "Checkout", checkouts_path, method: :get %>
+      <%= button_to "Cardholders", cardholder_accounts_path, method: :get %>
+      <%= button_to "Cardholder Info", cardholder_personal_infos_path, method: :get %>
+      <%= button_to "Fines", fines_path, method: :get %>
+      <%= button_to "Materials", materials_path, method: :get %>
     <%= yield %>
   </body>
 </html>
