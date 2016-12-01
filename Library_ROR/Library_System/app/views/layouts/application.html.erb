@@ -3,54 +3,40 @@
   <head>
 
 
-<title>Bootstrap Example</title>
+<title>Library System</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!--the above part is for  using bootstrap-->
 
     <title>LibrarySystem</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-<!--Part of bootstrap-->
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
+      
+      <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Library System</a>
-        </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+              <a class="navbar-brand" href="#">Library System</a>
+              <li class="navpadd"><%= button_to "Checkout", checkouts_path, method: :get %></li>
+              <li class="navpadd"><%= button_to "Cardholders", cardholder_accounts_path, method: :get %></li>
+              <li class="navpadd"><%= button_to "Cardholder Info", cardholder_personal_infos_path, method: :get %></li>
+              <li class="navpadd"><%= button_to "Fines", fines_path, method: :get %></li>
+              <li class="navpadd"><%= button_to "Materials", materials_path, method: :get %></li>
+              <li><a href="#about">Log Out</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </nav>
-    <br></br>
-
-
+  </head>
+    <br />
 
   <body>
-      <%= button_to "Checkout", checkouts_path, method: :get %>
-      <%= button_to "Cardholders", cardholder_accounts_path, method: :get %>
-      <%= button_to "Cardholder Info", cardholder_personal_infos_path, method: :get %>
-      <%= button_to "Fines", fines_path, method: :get %>
-      <%= button_to "Materials", materials_path, method: :get %>
+      <span style="float:right; padding-top: 15px;"><%= image_tag("libraries.jpg", :alt => "Library System", :width => 250, :height => 165) %></span>
     <%= yield %>
   </body>
 </html>
