@@ -1,0 +1,24 @@
+<ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+            <li style="padding-top: 15px"><big><strong>Hello, <%= User.where(id: session[:user_id]).first %></strong></big></li>
+            <li><%= link_to "View Checkouts", checkouts_path %></li>
+            <li><%= link_to "Log Out", logout_path %><li>
+        <% else %>
+        <li><%= link_to "Sign Up", signup_path %></li>
+        <li><%= link_to "Log In", login_path %></li>
+        <% end %>
+    </ul>
+    
+    
+    
+    <!-- from working csc4500Auth example
+    <div id="user_header">
+      <%= link_to "Home Page", root_path %> |
+      <%= link_to "Test Page", login_path %> |
+      <% if current_user %>
+      <%= link_to "Log Out", logout_path %>
+      <% else %>
+        <%= link_to "Sign Up", signup_path %> or
+        <%= link_to "Log In", login_path %>
+      <% end %>
+  </div> -->

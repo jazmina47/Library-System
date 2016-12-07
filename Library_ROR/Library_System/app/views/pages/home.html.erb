@@ -1,5 +1,63 @@
-<div class="jumbotron text-center">
-  <h1>Login Page</h1>
-  <p>Resize this responsive page to see the effect!</p> 
-</div>
-  
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+        	<%= image_tag("lib.jpeg", :alt => "picture1", :width => 1600, :height => 640) %>
+          <!--<img class="first-slide" src="" alt="First slide"> -->
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Staff: Login To Our System</h1>
+              <p>Our Library Management System is awesome</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Log In</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+         	<%= image_tag("library_pic.jpg", :alt => "picture2", :width => 1600, :height => 640) %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Reading Is Awesome</h1>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Log In</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag("lib2.jpeg", :alt => "picture3", :width => 1600, :height => 640) %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>This Is The Best Library Ever.</h1>
+              <p>We have the best books around!</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Log In</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+
+
+
+
+
+
+
+
+
+
+

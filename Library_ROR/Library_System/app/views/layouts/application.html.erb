@@ -10,18 +10,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
     <title>LibrarySystem</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
       
-      <nav class="navbar navbar-inverse navbar-fixed-top">
+     <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-              <a class="navbar-brand" href="#">Library System</a>
+              <a class="navbar-brand">Library System</a>
               <li class="navpadd"><%= button_to "Checkout", checkouts_path, method: :get %></li>
               <li class="navpadd"><%= button_to "Cardholders", cardholder_accounts_path, method: :get %></li>
               <li class="navpadd"><%= button_to "Cardholder Info", cardholder_personal_infos_path, method: :get %></li>
@@ -31,13 +30,41 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav>-->
+
   </head>
     <br />
 
   <body>
-      <span style="float:right; padding-top: 15px;"><%= image_tag("libraries.jpg", :alt => "Library System", :width => 250, :height => 165) %></span>
-    <%= yield %>
+    <!-- <span style="float:right; padding-top: 15px;"><%= image_tag("libraries.jpg", :alt => "Library System", :width => 250, :height => 165) %></span> -->
+
+<!-- Navagation bar is now here -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div id="navbar" class="collapse navbar-collapse">
+    <!--logo links to home page -->
+    <%= link_to (image_tag("Library-System_logo.png", alt: "Library-System Logo")), root_path %>
+    
+    
+    </div>
+  </div>
+      </nav>
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, class: "alert alert-#{key}") do %>
+    <% end %>
+      <p><%= value %></p>
+  <% end %> 
+
+
+  <!-- Yield method inserts the contents of each page into the site layout -->
+  <%= yield %>
+
+<footer class="footer">
+  <small> 
+  The Library System Project Fall 2016 @
+  </small>
+</footer>
+
   </body>
 </html>
 
