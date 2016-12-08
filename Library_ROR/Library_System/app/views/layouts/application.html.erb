@@ -2,66 +2,77 @@
 <html>
   <head>
 
+  <!-- website title -->
+    <title>Library System</title>
 
-<title>Library System</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <title>LibrarySystem</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-      
-     <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-              <a class="navbar-brand">Library System</a>
-              <li class="navpadd"><%= button_to "Checkout", checkouts_path, method: :get %></li>
-              <li class="navpadd"><%= button_to "Cardholders", cardholder_accounts_path, method: :get %></li>
-              <li class="navpadd"><%= button_to "Cardholder Info", cardholder_personal_infos_path, method: :get %></li>
-              <li class="navpadd"><%= button_to "Fines", fines_path, method: :get %></li>
-              <li class="navpadd"><%= button_to "Materials", materials_path, method: :get %></li>
-              <li><a href="#about">Log Out</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>-->
+
 
   </head>
-    <br />
 
   <body>
-    <!-- <span style="float:right; padding-top: 15px;"><%= image_tag("libraries.jpg", :alt => "Library System", :width => 250, :height => 165) %></span> -->
 
-<!-- Navagation bar is now here -->
+<!-- V4: Navagation bar -->
   <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div id="navbar" class="collapse navbar-collapse">
-    <!--logo links to home page -->
-    <%= link_to (image_tag("Library-System_logo.png", alt: "Library-System Logo")), root_path %>
-    
-    
+     
+    <!--logo is linked to home page -->
+    <%= link_to (image_tag("Library-System_logo.png", alt: "Library-System Logo")), root_path, id:"logo" %>
+
+    <ul class="nav navbar-nav navbar-right navbar-text pull-right">
+
+      <!--logic to check if user is signed in or not to show appropriate links-->
+      <% if user_signed_in? %>
+        <li class="showUserEmail"> Hello User, <strong><%= current_user.email %></strong>! </li>
+
+        <li><%= link_to 'MyDashboard', root_path %></li>
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li> 
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %><li> 
+      <% else %> 
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %></li>
+        <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link' %></li>
+      <% end %>
+    </ul>   
     </div>
   </div>
-      </nav>
-  <% flash.each do |key, value| %>
-    <%= content_tag(:div, class: "alert alert-#{key}") do %>
-    <% end %>
-      <p><%= value %></p>
-  <% end %> 
+  </nav>
+  
+  <br />
+  <br />
 
+
+<!-- DEVISE alerts -->
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
 
   <!-- Yield method inserts the contents of each page into the site layout -->
   <%= yield %>
 
+<br />
+
+
 <footer class="footer">
   <small> 
-  The Library System Project Fall 2016 @
+  The Library System Project Fall 2016 &copy;
+  </small>
+  <small class="footerNames container-fluid text-center">
+  Created and Developed By: Jazmin Andrade, Karla Flores, Zach Gordon, &amp; Guy Zarko.
   </small>
 </footer>
 

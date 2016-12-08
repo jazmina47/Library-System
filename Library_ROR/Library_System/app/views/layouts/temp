@@ -1,24 +1,74 @@
-<ul class="nav navbar-nav navbar-right">
-        <% if current_user %>
-            <li style="padding-top: 15px"><big><strong>Hello, <%= User.where(id: session[:user_id]).first %></strong></big></li>
+    
+<!--FIRST NAV BAR MADE BY ZACH -->
+     <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+              <a class="navbar-brand">Library System</a>
+              <li class="navpadd"><%= button_to "Checkout", checkouts_path, method: :get %></li>
+              <li class="navpadd"><%= button_to "Cardholders", cardholder_accounts_path, method: :get %></li>
+              <li class="navpadd"><%= button_to "Cardholder Info", cardholder_personal_infos_path, method: :get %></li>
+              <li class="navpadd"><%= button_to "Fines", fines_path, method: :get %></li>
+              <li class="navpadd"><%= button_to "Materials", materials_path, method: :get %></li>
+              <li><a href="#about">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>-->
+
+
+<!-- SECOND ATTEMPT OF NAV BAR -->
+       <!-- <% if current_user %>
+            <!--<li style="padding-top: 15px"><big><strong>Hello, <%= User.where(id: session[:user_id]).first %></strong></big></li> -->
             <li><%= link_to "View Checkouts", checkouts_path %></li>
             <li><%= link_to "Log Out", logout_path %><li>
         <% else %>
         <li><%= link_to "Sign Up", signup_path %></li>
         <li><%= link_to "Log In", login_path %></li>
         <% end %>
-    </ul>
+    </ul> -->
     
+      <% flash.each do |key, value| %>
+    <%= content_tag(:div, class: "alert alert-#{key}") do %>
+    <% end %>
+      <p><%= value %></p>
+  <% end %> 
     
-    
-    <!-- from working csc4500Auth example
-    <div id="user_header">
+<!-- WORKING EXAMPLE csc4500Auth FROM CLASS -->
+<!--  <div id="user_header">
       <%= link_to "Home Page", root_path %> |
       <%= link_to "Test Page", login_path %> |
       <% if current_user %>
-      <%= link_to "Log Out", logout_path %>
+        <%= link_to "Log Out", logout_path %>
       <% else %>
         <%= link_to "Sign Up", signup_path %> or
         <%= link_to "Log In", login_path %>
       <% end %>
-  </div> -->
+    </div> 
+
+
+<!-- V4: Navagation bar -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div id="navbar" class="collapse navbar-collapse">
+    <!--logo is linked to home page -->
+     <%= link_to (image_tag("Library-System_logo.png", alt: "Library-System Logo")), root_path %>
+    <ul class="nav navbar-nav navbar-right">
+      <!--logic to check if user is signed in or not to show appropriate links-->
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+        <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li> 
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %><li> 
+      <% else %> 
+        <li><<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+        <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link' %></li>
+      <% end %>
+    </ul>   
+    </div>
+  </div>
+  </nav>
+
+
+
+
+

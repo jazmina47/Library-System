@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20161207180931) do
 
-  create_table "cardholder_accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "cardholder_accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "firstname"
     t.string   "lastname"
     t.integer  "cardholder_id"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20161207180931) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "cardholder_personal_infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "cardholder_personal_infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "lastname"
     t.string   "email"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20161207180931) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "checkouts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "checkouts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "date"
     t.date     "due_date"
     t.integer  "checkout_id"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20161207180931) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "fines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "fines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.date     "date_of_fine"
     t.decimal  "amount",        precision: 10
     t.integer  "cardholder_id"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20161207180931) do
     t.datetime "updated_at",                   null: false
   end
 
-  create_table "materials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "materials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "material_type"
     t.string   "material_classification_id"
     t.string   "material_title"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20161207180931) do
     t.datetime "updated_at",                 null: false
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

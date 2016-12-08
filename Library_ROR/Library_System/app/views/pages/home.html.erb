@@ -1,6 +1,7 @@
     <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -14,8 +15,8 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Staff: Login To Our System</h1>
-              <p>Our Library Management System is awesome</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Log In</a></p>
+              <p>Our Library Management System is Awesome.</p>
+              <p><%= button_to "Log In", new_user_session_path, method: :get, class: "btn btn-lg btn-primary" %></p>
             </div>
           </div>
         </div>
@@ -24,7 +25,8 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Reading Is Awesome</h1>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Log In</a></p>
+              <p>Please, come check us out!</p>
+              <p><%= button_to "Log In", new_user_session_path, method: :get, class: "btn btn-lg btn-primary" %></p>
             </div>
           </div>
         </div>
@@ -34,7 +36,7 @@
             <div class="carousel-caption">
               <h1>This Is The Best Library Ever.</h1>
               <p>We have the best books around!</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Log In</a></p>
+              <p><%= button_to "Log In", new_user_session_path, method: :get, class: "btn btn-lg btn-primary" %></p>
             </div>
           </div>
         </div>
@@ -52,6 +54,36 @@
     </div><!-- /.carousel -->
 
 
+<!-- Some filler home page text and images -->
+<div class="container text-center">    
+  <h3>What We Do</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="http://www.nzmoray.co.nz/photos/company-office-management-property-administration.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <p>This Library-System application was made by using Ruby on Rails. Bootstrap was used to style the website.</p>
+    </div>
+    <div class="col-sm-4"> 
+      <img src="http://www.fc.ac.ae/wp-content/uploads/2013/11/DIPLOMA-IN-BUSINESS-ADMINISTRATION.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <p>The web application was designed for staff and administration to log in, and make modifications, additions, deletions, and manipulations to the Libraries stored data. For example, an Administrator can add and delete employees.</p>    
+    </div>
+    <div class="col-sm-4">
+      <div class="well">
+       <p><blockquote>"This is one of the best applications I have ever used!" - Anonymous</blockquote></p>
+      </div>
+      <div class="well">
+       <p><blockquote>"Easy to Use and Improves Productivity." - AmazingReviewer234 </blockquote></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<script>
+  $('.carousel').carousel({
+    interval: 3000
+  })
+</script>
 
 
 

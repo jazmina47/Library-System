@@ -52,4 +52,9 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   ActiveSupport::Dependencies.autoload_paths <<  File::join(Rails.root, 'app')
+
+  #DEVISE : defined default url options in the environment files 
+  # from: http://guides.railsgirls.com/devise
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
 end
