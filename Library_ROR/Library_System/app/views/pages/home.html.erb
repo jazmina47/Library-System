@@ -14,9 +14,17 @@
           <!--<img class="first-slide" src="" alt="First slide"> -->
           <div class="container">
             <div class="carousel-caption">
+                <% if user_signed_in? %>
+                <h1>Checkout a Cardholder </h1>
+                <p><%= button_to "Checkout", checkouts_path, method: :get, class: "btn btn-lg btn-warning" %></p>
+                <% else %>
               <h1>Staff: Login To Our System</h1>
               <p>Our Library Management System is Awesome.</p>
+                <% end %>
+              <% if user_signed_in? %>
+                <% else %>
               <p><%= button_to "Log In", new_user_session_path, method: :get, class: "btn btn-lg btn-primary" %></p>
+                <% end %>
             </div>
           </div>
         </div>
@@ -26,7 +34,10 @@
             <div class="carousel-caption">
               <h1>Reading Is Awesome</h1>
               <p>Please, come check us out!</p>
+                <% if user_signed_in? %>
+                <% else %>
               <p><%= button_to "Log In", new_user_session_path, method: :get, class: "btn btn-lg btn-primary" %></p>
+                <% end %>
             </div>
           </div>
         </div>
@@ -36,7 +47,10 @@
             <div class="carousel-caption">
               <h1>This Is The Best Library Ever.</h1>
               <p>We have the best books around!</p>
+              <% if user_signed_in? %>
+                <% else %>
               <p><%= button_to "Log In", new_user_session_path, method: :get, class: "btn btn-lg btn-primary" %></p>
+                <% end %>
             </div>
           </div>
         </div>
@@ -68,10 +82,10 @@
     </div>
     <div class="col-sm-4">
       <div class="well">
-       <p><blockquote>"This is one of the best applications I have ever used!" - Anonymous</blockquote></p>
+       <p><blockquote>"This is the best library application I have ever used!" - W. Kajjumba</blockquote></p>
       </div>
       <div class="well">
-       <p><blockquote>"Easy to Use and Improves Productivity." - AmazingReviewer234 </blockquote></p>
+       <p><blockquote>"Easy to Use and Improves Productivity." - J. Murray </blockquote></p>
       </div>
     </div>
   </div>
