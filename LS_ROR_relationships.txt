@@ -42,7 +42,7 @@ Table: Materials
 
 class Materials < ApplicationRecord
 
-	has_and_belongs_to_many :checkouts
+	belongs_to :checkouts
 
 end
 
@@ -52,7 +52,7 @@ Table: Cardholder_Account
 
 class Cardholder_Account < ApplicationRecord
 
-	has_one	    :Cardhorder_Personal_Info	
+	belongs_to    :Cardhorder_Personal_Info	
 
 	has_many    :checkouts
 
