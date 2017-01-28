@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+
 #staff -------------------------------------- 5 seeds
 
 #staff.create!(staff_title: 'Librarian Director', staff_name: 'John', staff_lastname: 'Smith', staff_code: '123abc')
@@ -54,6 +56,25 @@ CardholderAccount.create!(firstname: 'Ollie', lastname: 'Revere', cardholder_id:
 #Material.create!(material_type: 'Book', material_classification_id: 'Fiction', material_title: 'C++ Introduction to Programming', quantity_material: '5')
 #Material.create!(material_type: 'Book', material_classification_id: 'Fiction', material_title: 'This is Another Book', quantity_material: '3')
 #Material.create!(material_type: 'Book', material_classification_id: 'Non-Fiction', material_title: 'Astronomy: Volume 1', quantity_material: '1')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
